@@ -1,11 +1,11 @@
-package com.steeveen.txpoker.config;
+package com.marchgoose.txpoker.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * @Author:gzh
+ * @Author:marchgoose
  * @Date: 2022/4/20 10:29
  */
 @Configuration

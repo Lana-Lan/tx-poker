@@ -1,4 +1,4 @@
-package com.steeveen.txpoker.config;
+package com.marchgoose.txpoker.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -6,7 +6,7 @@ import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 
 
 /**
- * @Author:gzh
+ * @Author:marchgoose
  * @Date: 2022/4/20 10:35
  */
 @Configuration

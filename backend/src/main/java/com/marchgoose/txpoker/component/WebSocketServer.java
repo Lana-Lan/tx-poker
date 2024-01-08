@@ -1,7 +1,7 @@
-package com.steeveen.txpoker.component;
+package com.marchgoose.txpoker.component;
 
 import com.alibaba.fastjson.JSON;
-import com.steeveen.txpoker.vo.Message;
+import com.marchgoose.txpoker.vo.Message;
 import org.springframework.stereotype.Component;
 import org.thymeleaf.util.StringUtils;
 
@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * @Author:gzh
+ * @Author:marchgoose
  * @Date: 2022/4/20 20:27
  * 注意在websocket通信中只能传string
  */

@@ -1,11 +1,11 @@
-package com.steeveen.txpoker.vo;
+package com.marchgoose.txpoker.vo;
 
 import lombok.Data;
 
 import java.util.List;
 
 /**
- * @Author:gzh
+ * @Author:marchgoose
  * @Date: 2022/4/20 20:43
  */
 @Data

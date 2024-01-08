@@ -8,13 +8,12 @@
         <version>2.6.6</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>gzh</groupId>
-    <artifactId>chat</artifactId>
+    <groupId>MarchGoose</groupId>
+    <artifactId>tx-poker</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>chat</name>
+    <name>txPoker</name>
     <description>Demo project for Spring Boot</description>
-<!--    添加打包格式-->
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -34,11 +33,11 @@
                 </exclusion>
             </exclusions>
         </dependency>
-<!--        添加tomcat支持-->
+        <!--        添加tomcat支持-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
-<!--            <scope>provided</scope>-->
+            <!--            <scope>provided</scope>-->
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
