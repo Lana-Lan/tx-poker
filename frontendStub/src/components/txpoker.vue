@@ -1,10 +1,10 @@
 <template>
   <div align="center">
-    <el-row style="width: 50%;">
+    <el-row style="width: 100%;" :gutter="8">
       <!--      用户列表-->
-      <el-col :span="6">
-        <el-card style="width: 100%;height: 800px">
-          <div style="text-align: center;font-size: 28px;margin-bottom: 10px">当前聊天室成员</div>
+      <el-col :span="10">
+        <el-card style="width: 100%;height: 100%">
+          <div style="text-align: center;font-size: 28px;margin-bottom: 10px">房间列表</div>
           <div style="height: 700px;overflow-y:auto;border:1px solid #000000;border-radius: 5px">
             <div v-for="(item,index) in userList" :key="index" style="padding: 10px;margin-top: 10px;font-size: 20px">
               {{item}}
@@ -12,11 +12,11 @@
           </div>
         </el-card>
       </el-col>
-      <!--      聊天室-->
-      <el-col :span="18">
+      <!--      roomInfo-->
+      <el-col :span="14">
         <div style="width: 100%;">
           <el-card style="width: 100%;height: 800px">
-            <div style="text-align: center;font-size: 28px;margin-bottom: 10px">一起聊天吧</div>
+            <div style="text-align: center;font-size: 28px;margin-bottom: 10px">房间信息</div>
             <div style="width: 100%;height: 550px;border:1px solid #000000;border-radius: 5px;overflow-y:auto;margin-bottom: 10px">
               <div v-for="(item,index) in msgList" :key="index">
 <!--                {{item.from}}{{item.msg}}{{item.time}}-->
@@ -24,7 +24,7 @@
                 <div align="left" v-else style="color: coral"><el-tag size="mini" type="danger">{{item.from}}</el-tag>{{item.msg}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.time}}</div>
               </div>
             </div>
-            <el-input @keyup.enter.native="send" type="textarea" v-model="message.msg" :autosize="{ minRows: 2, maxRows: 4}" placeholder="请输入聊天内容"></el-input>
+            <el-input @keyup.enter.native="send" type="textarea" v-model="message.msg" :autosize="{ minRows: 2, maxRows: 4}" placeholder="请输入内容"></el-input>
             <div align="right">
               <el-button type="primary" style="margin-top: 10px" @click="send">发送</el-button>
             </div>
@@ -106,7 +106,7 @@
       send() {
         if (!this.message.msg) {
           this.$message({
-            message: '大兄弟，请输入聊天消息！',
+            message: '大兄弟，请输入信息！',
             type: 'warning'
           });
         } else {
