@@ -1,6 +1,11 @@
-# chatweb
+# txPoker
 
 > A Vue.js project
+## 本地调试：
+1. windows开放后端端口（8080）
+2. 手机电脑处于同一局域网，查看电脑ip
+3. 修改前端frontendStub/src/components/txpoker.vue中的socketUrl为局域ip
+4. 使用局域ip连接
 
 ## Build Setup
 

@@ -36,7 +36,7 @@ export default {
       this.$refs['form'].validate((valid) => {
         if (valid) {
           sessionStorage.setItem('user', this.form.username)
-          this.$router.push('/chat')
+          this.$router.push('/txpoker')
         } else {
           console.log('error submit!!');
           return false;

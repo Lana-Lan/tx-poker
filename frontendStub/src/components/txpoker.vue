@@ -40,7 +40,7 @@
   let socket;
 
   export default {
-    name: 'chat',
+    name: 'txpoker',
     data() {
       return {
         // 登录用户
@@ -70,7 +70,7 @@
           console.log("您的浏览器不支持WebSocket");
         } else {
           console.log("您的浏览器支持WebSocket");
-          let socketUrl = "ws://localhost:8888/socket/" + this.user;
+          let socketUrl = "ws://192.168.0.106:8080/socket/" + this.user;
           if (socket != null) {
             socket.close();
             socket = null;
