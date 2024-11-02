@@ -1,14 +1,25 @@
 <template>
   <div>
-    <h2>WebSocket Chat</h2>
     <Row>
-      <Input  v-model="dest" placeholder="type your dest"></Input>
+      <Row>
+        <h2>登录：</h2>
+        <Col span="12">
+          <Input v-model="userName" placeholder="请输入一个用户名"></Input>
+        </Col>
+        <Col>
+          <Button @click="login">send</Button>
+        </Col>
+      </Row>
+    </Row>
+    <h2>{{this.localUserName}}</h2>
+    <Row>
+      <Input v-model="dest" placeholder="type your dest"></Input>
     </Row>
     <Row>
-      <Input  v-model="message" placeholder="type your message"></Input>
+      <Input v-model="message" placeholder="type your message"></Input>
     </Row>
     <Row>
-      <Button  @click="sendMessage">send</Button>
+      <Button @click="sendMessage">send</Button>
     </Row>
     <Row>
       <h3>Messages:</h3>
@@ -33,13 +44,15 @@ export default {
   data() {
     return {
       client: null,
+      localUserName:'WebSocket Chat',
+      userName:'',
       message: '',
       messages: [],
-      userMessages:[],
+      userMessages: [],
       dest: '/app/login',
     };
   },
-  components:{
+  components: {
     MessageCard
   },
   created() {
@@ -60,7 +73,7 @@ export default {
             this.messages.push(message.body);
           });
           this.client.subscribe('/topic/user-list', (userMessageOri) => {
-            this.userMessages=JSON.parse(userMessageOri.body);
+            this.userMessages = JSON.parse(userMessageOri.body);
             // console.log('user-list message',message.body);
             // console.log('user-list message json',JSON.stringify(message.body));
             // this.userMessages=JSON.stringify(message.body);
@@ -72,6 +85,16 @@ export default {
       });
 
       this.client.activate();
+    },
+    login() {
+      if (this.userName) {
+        this.client.publish({
+          destination: '/app/login', // 替换为你的消息目的地
+          body: this.userName,
+        });
+        this.userName = ''; // 发送后清空输入框
+        this.localUserName=this.userName;
+      }
     },
     sendMessage() {
       if (this.message) {
