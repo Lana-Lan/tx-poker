@@ -1,13 +1,16 @@
 <template>
   <div id="app">
-<!--    <img src="./assets/logo.png">-->
-    <router-view/>
+    <WebSocketChat/>
   </div>
 </template>
 
 <script>
+import WebSocketChat from "./components/WebSocketChat";
 export default {
-  name: 'App'
+  name: 'App',
+  components:{
+    WebSocketChat
+  }
 }
 </script>
 
